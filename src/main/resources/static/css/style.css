@@ -1,0 +1,50 @@
+h1{
+    
+    color: #4abcaf;
+}
+img {
+    width: 100%;
+    height: 200px;
+  }
+.imgdiv{
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 5px black;
+    border-radius: 15px;
+}
+#clock {
+    
+    text-align: center;
+    
+}
+.team{
+    align-content: center;
+    width: 215px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cntr{
+    margin-left: auto;
+    margin-right: auto;
+}
+.top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lightblue; /* Example background color */
+    padding: 10px; /* Add some padding */
+}
+
+.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: lightcoral; /* Example background color */
+    padding: 10px; /* Add some padding */
+}
+.ctop{
+    margin-top: 20px;
+}
