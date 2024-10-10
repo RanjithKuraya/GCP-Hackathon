@@ -7,10 +7,9 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build',
-    '-t', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}',
-    'GCP-Hackathon'  # Ensure this path is where your Dockerfile is located
-  ]
-
+    '-t', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}']
+   dir: 'GCP-Hackathon'
+ 
 # Step 3: Push the Docker image to the container registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$_SHORT_SHA']
