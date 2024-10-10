@@ -20,7 +20,7 @@ steps:
     'image',
     'deployment',
     'tem-app',
-    'cicdtem1-sha256-1=gcr.io/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$_SHORT_SHA'
+    'cicdtem1-sha256=gcr.io/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$_SHORT_SHA'
     ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
