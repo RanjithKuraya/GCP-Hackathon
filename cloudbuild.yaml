@@ -3,7 +3,21 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone','-b','gcp_hackathon', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
+# Build the Maven project
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['clean', 'install']
+  dir: '/workspace/GCP-Hackathon'
 
+# Step to run SonarQube analysis
+- name: 'gcr.io/cloud-builders/mvn'
+  args: [
+    'sonar:sonar',
+    '-Dsonar.projectKey=temcid_temcid',
+    '-Dsonar.organization=temcid',  # Adjust if using SonarCloud
+    '-Dsonar.host.url=https://sonarcloud.io', 
+    '-Dsonar.login=ec2f95442c32b48d6d9ddadc5cf591b4e9660a3e'  # Use the token securely
+  ]
+  dir: '/workspace/GCP-Hackathon'
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
 - name: 'gcr.io/cloud-builders/docker'
