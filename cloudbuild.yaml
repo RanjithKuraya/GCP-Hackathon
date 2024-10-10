@@ -4,7 +4,7 @@ steps:
   args: ['clone', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
 - name: 'gcr.io/cloud-builders/bash'
-  entrypoint: 'bash'
+  entrypoint: 'sh'
   args: ['-c', 'echo "Contents of GCP-Hackathon:" && ls -la ./GCP-Hackathon']
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
