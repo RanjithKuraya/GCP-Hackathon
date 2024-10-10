@@ -32,4 +32,4 @@ substitutions:
   _IMAGE_NAME: 'cicdtem1'
   _PROJECT_ID: 'glb-fs-wgh-app-dev'
   _SHORT_SHA: 'v1'
-  _REPO_NAME: 'cicdtem'
+  _REPO_NAME: 'cicdtem-1'
