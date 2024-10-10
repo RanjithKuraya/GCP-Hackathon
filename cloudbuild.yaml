@@ -35,6 +35,4 @@ substitutions:
   _PROJECT_ID: 'glb-fs-wgh-app-dev'
   _REPO_NAME: 'cicdtem-1'
 
-# Specify the Docker image with the SHORT_SHA tag
-images:
-  - 'gcr.io/${_PROJECT_ID}/${_IMAGE_NAME}:${SHORT_SHA}'
+
