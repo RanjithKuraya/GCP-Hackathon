@@ -7,6 +7,6 @@ RUN mvn clean package
 
 # Use OpenJDK to run the application
 FROM openjdk:17-jdk-alpine
-VOLUME /tmp
+WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
