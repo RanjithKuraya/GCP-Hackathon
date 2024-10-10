@@ -3,13 +3,11 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
-- name: 'gcr.io/cloud-builders/docker'
-  entrypoint: 'sh'
-  args: ['-c', 'echo "Contents of GCP-Hackathon:" && cd GCP-Hackathon  && ls -ltr']
+
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_IMAGE_NAME}:$_SHORT_SHA','/workspace/GCP-Hackathon/']
+  args: ['build', '-t', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$_SHORT_SHA','/workspace/GCP-Hackathon/']
  
 # Step 3: Push the Docker image to the container registry
 - name: 'gcr.io/cloud-builders/docker'
