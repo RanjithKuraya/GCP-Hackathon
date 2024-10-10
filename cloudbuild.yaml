@@ -5,7 +5,7 @@ steps:
 
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'sh'
-  args: ['-c', 'echo "Contents of GCP-Hackathon:" && pwd ]
+  args: ['-c', 'echo "Contents of GCP-Hackathon:" && pwd ']
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
 - name: 'gcr.io/cloud-builders/docker'
