@@ -1,7 +1,7 @@
 steps:
 # Step 1: Clone the repository from GitHub
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone','-b','gcp_hackathon', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
+  args: ['clone','-b','gcp_hackathon_test', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
 # Build the Maven project
 - name: 'gcr.io/cloud-builders/mvn'
@@ -35,7 +35,7 @@ steps:
     'deployment',
     'tem-app',
     'cicdtem1-sha256-1=europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}',
-    '--namespace=tem-cicd-dev'
+    '--namespace=tem-cicd-test'
     ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
