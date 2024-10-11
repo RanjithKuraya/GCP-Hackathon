@@ -34,7 +34,7 @@ steps:
     'image',
     'deployment',
     'tem-app-test',
-    'cicdtem1-sha256-1=europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}',
+    'tem-cicd-test-sha256-1=europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}',
     '--namespace=tem-cicd-test'
     ]
   env:
