@@ -42,16 +42,6 @@ steps:
   # Setting  namespace here
   - 'KUBECONFIG=/workspace/kubeconfig.yaml'  # Point to your kubeconfig if necessary
   - 'KUBERNETES_NAMESPACE=tem-cicd-dev'
-  # Add an optional check for the branch if needed (e.g., only deploy on certain branches)
-  - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        if [[ "$BRANCH_NAME" != "gcp_hackathon" ]]; then
-          echo "Skipping deployment for branch $BRANCH_NAME"
-          exit 0
-        fi
     
 options:
   logging: CLOUD_LOGGING_ONLY  # Or use NONE if you don't want any logging.
