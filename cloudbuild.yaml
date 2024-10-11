@@ -44,7 +44,7 @@ steps:
   - 'KUBERNETES_NAMESPACE=tem-cicd-dev'
   # Add an optional check for the branch if needed (e.g., only deploy on certain branches)
   - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'bash'
+    entrypoint: 'sh'
     args:
       - '-c'
       - |
