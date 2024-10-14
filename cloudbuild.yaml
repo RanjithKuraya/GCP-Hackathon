@@ -15,7 +15,7 @@ steps:
     '-Dsonar.projectKey=temcid_temcid',
     '-Dsonar.organization=temcid',  # Adjust if using SonarCloud
     '-Dsonar.host.url=https://sonarcloud.io', 
-    '-Dsonar.login=${SONAR_TOKEN}'  # Use the token securely
+    '-Dsonar.login=${_SONAR_TOKEN}'  # Use the token securely
   ]
   dir: '/workspace/GCP-Hackathon'
 
