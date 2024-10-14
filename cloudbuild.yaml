@@ -18,7 +18,7 @@ steps:
     '-Dsonar.login= ${_SONAR_TOKEN}'  # Use the token securely
   ]
   env:
-  - '_SONAR_TOKEN=${{ _SONAR_TOKEN }}'
+  - '_SONAR_TOKEN=${{ vars._SONAR_TOKEN }}'
   dir: '/workspace/GCP-Hackathon'
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
