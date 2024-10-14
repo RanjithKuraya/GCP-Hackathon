@@ -52,7 +52,7 @@ substitutions:
   _IMAGE_NAME: 'cicdtem1'
   _PROJECT_ID: 'glb-fs-wgh-app-dev'
   _REPO_NAME: 'cicdtem-1'
-  _SONAR_TOKEN: '${SONAR_TOKEN}'
+  _SONAR_TOKEN: '${_SONAR_TOKEN}'
   
 
 
