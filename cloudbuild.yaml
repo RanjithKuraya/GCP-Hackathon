@@ -21,7 +21,7 @@ steps:
 
 # Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}','/workspace/GCP-Hackathon/']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}','/workspace/GCP-Hackathon/']
  
 # Step 3: Push the Docker image to the container registry
 - name: 'gcr.io/cloud-builders/docker'
