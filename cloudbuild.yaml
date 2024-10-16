@@ -12,7 +12,7 @@ steps:
 - name: 'gcr.io/cloud-builders/mvn'
   args: [
     'sonar:sonar',
-    '-Dsonar.projectKey=temcid_temcid',
+    '-Dsonar.projectKey=temcid_temcidtest',
     '-Dsonar.organization=temcid',  # Adjust if using SonarCloud
     '-Dsonar.host.url=https://sonarcloud.io', 
     '-Dsonar.login=ec2f95442c32b48d6d9ddadc5cf591b4e9660a3e'  # Use the token securely
