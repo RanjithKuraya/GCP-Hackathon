@@ -1,5 +1,5 @@
 steps:
-# Step 1: Clone the repository from GitHub
+# Step 1: Clone the repository from GitHub 
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone','-b','gcp_hackathon_dev', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
