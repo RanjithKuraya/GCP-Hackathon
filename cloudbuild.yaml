@@ -28,18 +28,18 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}']
 
 # Step 4: Update the Kubernetes deployment to use the newly built Docker image with the tag SHORT_SHA
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args: [
-#    'set',
-#    'image',
-#    'deployment',
-#    'tem-app',
-#    'cicdtem1-sha256-1=europe-west3-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}',
-#    '--namespace=tem-cicd-dev'
-#    ]
-#  env:
-#  - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
-#  - 'CLOUDSDK_CONTAINER_CLUSTER=tem-cicd'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: [
+    'set',
+    'image',
+    'deployment',
+    'dev-app',
+    'fs-3-14-dev-sha256-1=us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}',
+    '--namespace=tem-cicd-dev'
+    ]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=fs-3-14'
   # Setting  namespace here
 #  - 'KUBECONFIG=/workspace/kubeconfig.yaml'  # Point to your kubeconfig if necessary
  # - 'KUBERNETES_NAMESPACE=tem-cicd-dev'
