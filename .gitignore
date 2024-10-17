@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-/cloudbuild.yaml
+GCP-Hackathon/cloudbuild.yaml
 
 ### STS ###
 .apt_generated
