@@ -8,7 +8,7 @@ steps:
   args: ['clean', 'install']
   dir: '/workspace/GCP-Hackathon'
 
-# Step to run SonarQube analysis 1
+# Step to run SonarQube analysis 12
 - name: 'gcr.io/cloud-builders/mvn'
   args: [
     'sonar:sonar',
