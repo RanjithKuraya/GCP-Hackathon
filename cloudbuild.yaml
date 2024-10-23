@@ -6,11 +6,13 @@ steps:
 
 # Build the Maven project
 - name: 'gcr.io/cloud-builders/mvn'
+  id: 'Maven Build'
   args: ['clean', 'install']
   dir: '/workspace/GCP-Hackathon'
 
 # Step to run SonarQube analysis
 - name: 'gcr.io/cloud-builders/mvn'
+  id: 'Sonar Scanning'
   args: [
     'sonar:sonar',
     '-Dsonar.projectKey=temcid_temcidtest',
@@ -20,16 +22,19 @@ steps:
   ]
   dir: '/workspace/GCP-Hackathon'
 
-# Step 2: Build the Docker image with an auto-generated tag using SHORT_SHA
+# Step : Build the Docker image with an auto-generated tag using SHORT_SHA
 - name: 'gcr.io/cloud-builders/docker'
+  id: 'Docker Image & Tagging'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}','/workspace/GCP-Hackathon/']
  
 # Step 3: Push the Docker image to the container registry
 - name: 'gcr.io/cloud-builders/docker'
+  id: 'Image Push'
   args: ['push', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${SHORT_SHA}']
 
 # Step 4: Update the Kubernetes deployment to use the newly built Docker image with the tag SHORT_SHA
 - name: 'gcr.io/cloud-builders/kubectl'
+  id: 'Deployment'
   args: [
     'set',
     'image',
