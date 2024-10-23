@@ -1,6 +1,7 @@
 steps:
 # Step 1: Clone the repository from GitHub
 - name: 'gcr.io/cloud-builders/git'
+  id: 'GIT Clone'
   args: ['clone','-b','gcp_hackathon_test', 'https://github.com/RanjithKuraya/GCP-Hackathon.git']
 
 # Build the Maven project
